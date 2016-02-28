@@ -1,0 +1,27 @@
+body {
+	background: #252525;
+	color: #FFF;
+}
+
+h1 {
+	color: #f54997;
+}
+
+.letter-choice {
+	width: 40px;
+	height: 40px;
+	background-color: #333;
+	margin-bottom: 10px;
+	color: #FFF;
+	font-weight: bold;
+	line-height: 40px;
+}
+
+a > .letter-choice:hover {
+	background-color: #FFF;
+	color: #333;
+}
+
+.letter-choice.active {
+	background-color: #f54997;
+}

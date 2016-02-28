@@ -14,7 +14,8 @@ $app = New \SlimController\Slim(array(
 
 // Routes
 $app->addRoutes(array(
-    '/' => 'LetterController:index'
+    '/'              => 'LetterController:index',
+    '/:letter/:page' => 'LetterController:letter'
 ));
 
 $app->run();
