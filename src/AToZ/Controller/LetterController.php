@@ -15,12 +15,14 @@ class LetterController extends \SlimController\SlimController
     {
         $aToZProgrammes = $this->getAToZProgrammesByLetterAndPage($letter, $page);
         $programmes = $aToZProgrammes->elements;
+        $pages = $this->getNumPages($aToZProgrammes->count, $aToZProgrammes->per_page);
 
         $this->render('letter', array(
             'letter'     => $letter,
             'page'       => $page,
             'letters'    => array_merge(range('a', 'z'), array('0-9')),
-            'programmes' => $programmes
+            'programmes' => $programmes,
+            'pages'      => $pages
         ));
     }
 
@@ -40,6 +42,6 @@ class LetterController extends \SlimController\SlimController
 
     private function getNumPages($items, $itemsPerPage)
     {
-        
+        return ceil($items / $itemsPerPage);
     }
 }

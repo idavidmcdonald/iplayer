@@ -16,16 +16,17 @@
             <h1 class="text-center">iPlayer A to Z</h1>
           </div>
         </div>
-        <div class="row">
+        
+        <div class="row" id="nav">
           <?php foreach ($letters as $l): ?>
             <div class="small-2 medium-1 column end text-center">
               <?php if($l == $letter){ ?> 
-                <div class="letter-choice active">
+                <div class="letter choice active">
                   <?= strtoupper($l) ?>
                 </div>
               <?php } else { ?>
                 <a href="/<?= $l ?>/1" id="letter-choice-<?= $l ?>">
-                  <div class="letter-choice">
+                  <div class="letter choice">
                     <?= strtoupper($l) ?>
                   </div>
                 </a>
@@ -33,7 +34,8 @@
             </div>
           <?php endforeach; ?>
         </div>
-        <div class="row small-up-1 medium-up-2">
+        
+        <div class="row small-up-1 medium-up-2" id="programmes">
           <?php foreach ($programmes as $programme): ?>
             <div class="programme-container column">
               <h5 class="programme-title"><?= $programme->title ?></h5>
@@ -41,6 +43,39 @@
             </div>
           <?php endforeach; ?>
         </div>
+        
+        <?php if ($pages > 1) { ?>
+        <div class="row text-center" id="pagination">
+          <div class="small-12 columns">
+            
+            <a href="/<?= $letter ?>/1">
+              <div class="pageword choice">
+                First page
+              </div>
+            </a>
+
+            <?php for ($i = 1; $i <= $pages; $i++) { ?>
+              <?php if($i == $page){ ?> 
+                <div class="pagenum choice active">
+                  <?= $i ?>
+                </div>
+              <?php } else { ?>
+                <a href="/<?= $letter ?>/<?= $i ?>">
+                  <div class="pagenum choice">
+                    <?= $i ?>
+                  </div>
+                </a>
+              <?php } ?>
+            <?php } ?>
+            
+            <a href="/<?= $letter ?>/<?= $pages ?>">
+              <div class="pageword choice">
+                Last page
+              </div>
+            </a>
+          </div>
+        </div>
+        <?php } ?>
       </div>
     </div>
   </body>

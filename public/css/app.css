@@ -7,9 +7,7 @@ h1 {
 	color: #f54997;
 }
 
-.letter-choice {
-	width: 40px;
-	height: 40px;
+.choice {
 	background-color: #333;
 	margin-bottom: 10px;
 	color: #FFF;
@@ -17,15 +15,33 @@ h1 {
 	line-height: 40px;
 }
 
-a > .letter-choice:hover {
+a > .choice:hover {
 	background-color: #FFF;
 	color: #333;
 }
 
-.letter-choice.active {
+.choice.active {
 	background-color: #f54997;
+}
+
+.choice.letter {
+	width: 40px;
+	height: 40px;
+}
+
+.choice.pagenum {
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+}
+
+.choice.pageword {
+	width: 100px;
+	height: 40px;
+	display: inline-block;
 }
 
 .programme-container {
 	margin-bottom: 20px;
 }
+
