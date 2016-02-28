@@ -37,4 +37,9 @@ class LetterController extends \SlimController\SlimController
         $requestUri = 'ibl/v1/atoz/' . $letter . '/programmes?page=' . $page;
         return $client->request('GET', $requestUri);
     }
+
+    private function getNumPages($items, $itemsPerPage)
+    {
+        
+    }
 }
