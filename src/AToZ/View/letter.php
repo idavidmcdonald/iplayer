@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="row">
-      <div class="small-12 medium-10 large-8 small-centered columns">
+      <div class="small-12 medium-10 small-centered columns">
         <div class="row">
           <div class="small-12 columns">
             <h1 class="text-center">iPlayer A to Z</h1>
@@ -30,6 +30,14 @@
                   </div>
                 </a>
               <?php } ?>
+            </div>
+          <?php endforeach; ?>
+        </div>
+        <div class="row small-up-1 medium-up-2">
+          <?php foreach ($programmes as $programme): ?>
+            <div class="programme-container column">
+              <h5 class="programme-title"><?= $programme->title ?></h5>
+              <img class="programme-image" src="<?= str_replace('{recipe}', '560x315', $programme->images->standard) ?>" alt="Photo of <?= $programme->title ?>">
             </div>
           <?php endforeach; ?>
         </div>
